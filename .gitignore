@@ -107,3 +107,7 @@ nb-configuration.xml
 ### Git ###
 # Don't exclude the .gitignore itself
 !.gitignore
+
+test/
+
+src/main/java/ch/jalu/configme/Test.java

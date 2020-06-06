@@ -111,6 +111,7 @@ public class ConfigurationDataBuilder {
     @Nullable
     protected Property<?> getPropertyField(Field field) {
         if (Property.class.isAssignableFrom(field.getType()) && Modifier.isStatic(field.getModifiers())) {
+            field.setAccessible(true);
             try {
                 return (Property<?>) field.get(null);
             } catch (IllegalAccessException e) {
