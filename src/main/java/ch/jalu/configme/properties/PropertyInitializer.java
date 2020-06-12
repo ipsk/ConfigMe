@@ -92,6 +92,18 @@ public class PropertyInitializer {
     }
 
     /**
+     * Creates a new String list property.
+     *
+     * @param path the property's path
+     * @param defaultValues the items in the default list
+     * @return the created list property
+     */
+    public static Property<List<String>> newListProperty(String path, List<String> defaultValues) {
+        // does not have the same name as not to clash with #newProperty(String, String)
+        return new StringListProperty(path, defaultValues);
+    }
+
+    /**
      * Creates a new String set property where all values are lowercase.
      *
      * @param path the property's path
@@ -99,6 +111,17 @@ public class PropertyInitializer {
      * @return the created set property
      */
     public static Property<Set<String>> newLowercaseStringSetProperty(String path, String... defaultValues) {
+        return new LowercaseStringSetProperty(path, defaultValues);
+    }
+
+    /**
+     * Creates a new String set property where all values are lowercase.
+     *
+     * @param path the property's path
+     * @param defaultValues the items in the default set
+     * @return the created set property
+     */
+    public static Property<Set<String>> newLowercaseStringSetProperty(String path, Set<String> defaultValues) {
         return new LowercaseStringSetProperty(path, defaultValues);
     }
 
